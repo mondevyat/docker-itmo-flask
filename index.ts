@@ -19,6 +19,7 @@ const addCounterInfo = (
   counter: number,
   userAgent: string,
 ) => {
+
   const date = moment().toISOString();
 
   return pg_database.query(
