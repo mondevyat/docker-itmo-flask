@@ -2,7 +2,7 @@ name: Build + Push + Deploy ITMO Counter
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "main" ]
 
 jobs:
   itmo-job:
