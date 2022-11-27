@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: itmo-counter-service
+  namespace: itmo-dev-01
+spec:
+  selector:
+    app: itmo-counter
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080

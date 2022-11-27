@@ -1,0 +1,27 @@
+kind: Template
+apiVersion: v1
+metadata:
+  name: itmo-postgres-template
+objects:
+  - kind: Deployment
+    apiVersion: apps/v1
+    metadata:
+      name: itmo-postgres
+      namespace: itmo-dev-01
+    spec:
+      replicas: 1
+      selector:
+        matchLabels:
+          app: itmo-postgres
+      template:
+        metadata:
+          labels:
+            app: itmo-postgres
+        spec:
+          containers:
+            - name: itmo-postgres
+              image: mondevyat/itmo-postgres:${IMAGE_TAG}
+              ports:
+                - containerPort: 5432
+parameters:
+  - name: IMAGE_TAG
